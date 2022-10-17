@@ -1,0 +1,53 @@
+<section class="container">
+    <div class="columns is multiline is-centered features">
+      {% assign sorted_backgrounds = site.backgrounds | sort: 'date' | reverse  %}
+      {% for background in sorted_backgrounds %}
+      <div class="column is-half">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-2by1">
+                <img src="{{ background.image }}" alt="No image">
+              </figure>
+            </div>
+            <div class="card-content modal-button" data-target="{{background.title}}">
+              <div class="content">
+                <h3 class="title is-3">{{ background.title }}</h3>
+                <div class="markdown">{{ background.content}}</div>
+                {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+                {% if background.end == "Present" %}
+                <h6 class="subtitle">{{ background.begin | {{ page.date | date: date_format }} - {{ background.end }}</h6>
+                {% else %}
+                <h6 class="subtitle">{{ background.begin | {{ page.date | date: date_format }} - {{ background.end | {{ page.date | date: date_format }}</h6>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="{{background.title}}" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-full">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-2by1">
+                <img src="{{ background.image }}" alt="No image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h2 class="title is-2">{{ background.title }}</h2>
+                {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+                {% if background.end == "Present" %}
+                <h6 class="subtitle">{{ background.begin | {{ page.date | date: date_format }} - {{ background.end }}</h6>
+                {% else %}
+                <h6 class="subtitle">{{ background.begin | {{ page.date | date: date_format }} - {{ background.end | {{ page.date | date: date_format }}</h6>
+                {% endif %}
+                <p>{{ background.content}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+      {% endfor %}
+    </div>
+</section>

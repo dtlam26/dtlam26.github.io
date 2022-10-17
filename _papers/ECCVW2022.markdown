@@ -1,0 +1,80 @@
+---
+layout: paper
+title:  Towards an Error-free Deep Occupancy Detector for Smart Camera Parking System
+date:  2022-06-15
+conference: CVCIE (ECCV Workshop)
+conference_link: https://vap.aau.dk/cvcie/
+categories: jekyll update
+image: "/images/papers/ECCVW2022/system.png"
+video: ""
+---
+
+*Abstract*: Although the smart camera parking system concept has existed for decades, a few approaches have fully addressed the system's scalability and reliability. As the cornerstone of a smart parking system is the ability to detect occupancy, traditional methods use the classification backbone to predict spots from a manual labeled grid. This is time-consuming and loses the system's scalability. Additionally, most of the approaches use deep learning models, making them not error-free and not reliable at scale. Thus, we propose an end-to-end smart camera parking system where we provide an autonomous detecting occupancy by an object detector called OcpDet. Our detector also provides meaningful information from contrastive modules: training and spatial knowledge, which avert false detections during inference. We benchmark OcpDet on the existing PKLot dataset and reach competitive results compared to traditional classification solutions. We also introduce an additional SNU-SPS dataset, in which we estimate the system performance from various views and conduct system evaluation in parking assignment tasks. The result from our dataset shows that our system is promising for real-world applications.
+
+<div class="markdown_details" markdown="1">
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/results.png">
+</div>
+
+<h3 class="title is-3">SNU-SPS Dataset</h3>
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/parking_dataset.png">
+  <strong>Overview of SNU-SPS dataset</strong>
+</div>
+
+SNU-SPS dataset contains nearly 3500 images to support our system. Those images are captured from various views, heights (1-3m), and light conditions in indoor and outdoor parking lots. Each parking lot has different parking spot background colors. The total images were manually checked, labeled, and attached by GPS to the corresponding parking slot. The protocol used to construct the SNU-SPS dataset is composed as follows:
+
+- *Image Acquisition:* All images are captured with a full-HD resolution. For the training set, it is captured randomly for one month in 15 parking lots. Meanwhile, the test set is captured consecutively in 6 parking lots from 3-6pm through 5 working days. It should be noted that none of the 6 parking lots are in the training set. Moreover, test samples contains various weather conditions (sun/rain/cloudy) and has corresponding surrounding traffic measurements from the open government website.
+
+- *Labeling:* For each parking sector, images were labeled as available/ occupied/ illegal/ restricted of each parking space. Each annotation is covered by four keypoints that specify for the localization of a parking lot. We formulate the wrapping bounding boxes for the detector from these key points. Especially, we provide optional image masks for the test set to filter out overlapping areas and non-important localization among capture among parking lots. The intention is to maintain the system’s constraints and preserve a better parking assignment benchmark.
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/parking_dataset_description.png">
+  <strong>Details of SNU-SPS dataset</strong>
+</div>
+
+<div class="centered">
+  <a href="mailto:dtlam26@snu.ac.kr"> Require Dataset Access </a>
+</div>
+
+<h3 class="title is-3"> OcpDet Detector</h3>
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/overall_architecture.png">
+  <strong>Overall Architecture</strong>
+</div>
+
+We aim to capture both high level features and low level features of the input image throughout the model interpretation, which combine the information of the parking borders/lines and the object inside those. Thus, Our OcpDet inherited the structure of Retina detector for this mechanism. However, we conduct additional modification on this architecture. First of all, instead of regressing only the center and the width of the bounding boxes, we integrate 4 others keypoints as new outcomes for the model (which is provided from our dataset).
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/modules.png">
+</div>
+
+Moreover, we attached two new modules for the *Spatial Estimator* and the *Training Error Estimator* as decribed in the abstract.
+
+- *Training Error Estimator:* For training error, we integrate the [Learning Loss](https://arxiv.org/abs/1905.03677) approach to predict the error of the prediction/predict the loss that the image can cause. Based on this loss, we can replicate how much the loss will be for the output if we labeled and compute for an input. However, to make the Learning Loss behave better with the dataset statistic, we sample the predicted Learning Loss over the dataset as its mean and variance and compare inferenced samples by a distribution distance to these statistics.
+
+<div class="centered">
+  <img width="50%" src="/images/papers/ECCVW2022/error.png">
+</div>
+
+- *Spatial Estimator:* As most of our nowadays detection focus on grid and anchor boxes, the prediction is filtered by a threshold value and background value. This can cause a situation where a correct activation anchor box has a score below this threshold, or a slight below the background confidence. Therefore, we provide an easy-integrated method by predicting the active anchor boxes in the scene by attaching another CNN module beside the *Training Error Estimator* and predict a mask of active anchors. This can be done reliably as the parking spots are equally patched in the scenes and can be well covered by different level of anchors. From this mask, we can suppress wrong detections by decreasing their confidence and enhance high-confidence anchors.
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/spatial.png">
+</div>
+
+By knowing the training-error and spatial estimator, we can determine which sample is not reliable due to training and which sample cause lots of spatial recovery and adjustment. From this preliminary, we can determine and improve our detector efficiently
+
+<div class="centered">
+  <img src="/images/papers/ECCVW2022/demo.png">
+  <strong> The results of these two modules </strong>
+</div>
+
+<h3 class="title is-3"> Training Description</h3>
+
+The total framework has been trained by Tensorflow Object Detection API, please follow the instruction from [my github resporitory]() for reinstallation and remake **(NOT YET AVAILABLE)**
+
+</div>

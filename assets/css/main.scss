@@ -1,0 +1,152 @@
+---
+---
+
+
+$navbar-font-color: white;
+$background-dark-gray: #23262a;
+$tiles-background: #2c3037;
+
+
+html {
+  scrollbar-color: #6969dd #454553;
+  scrollbar-width: thin;
+}
+
+
+.hero-img {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.hero-body {
+  * {
+    a {
+      color: orange !important;
+    }
+    a:hover {
+      font-weight: bolder !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+body {
+    background-color: $background-dark-gray;
+
+    p {
+        strong {
+            color: white;
+        }
+    }
+}
+
+.hero.is-dark {
+    background-color: $background-dark-gray;
+    .navbar {
+        .navbar-brand {
+
+            .title {
+
+                color: $navbar-font-color;
+            }
+        }
+
+        .navbar-item {
+            &.has-dropdown {
+                color: $navbar-font-color;
+            }
+        }
+
+        .navbar-dropdown {
+            color: black;
+
+            .navbar-item {
+                &:hover {
+                    outline: 1px solid #cacccc;
+
+                }
+            }
+        }
+
+        .navbar-menu {
+          display: flex;
+        }
+    }
+
+
+    .socials {
+        display: block;
+        i {
+          margin-right: 1em;
+          font-size: 20px;
+          color: white;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2);
+            color: orange;
+          }
+        }
+      }
+
+    .subtitle {
+        display: block;
+        text-align: justify;
+        margin: 0;
+    }
+    .avatar {
+        margin: 0 auto 1rem auto;
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 100%;
+        box-shadow: 0 4px 32px 0 black;
+        outline: 2px solid white;
+        &:hover {
+            box-shadow: 0 4px 32px 0 white;
+
+        }
+    }
+}
+
+
+.tile {
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+
+    a {
+        box-shadow: 0 2px 18px 0 black;
+
+        background-color: $tiles-background;
+        &:hover {
+            transform: scale(1.05);
+
+        }
+    }
+
+    .is-parent {
+
+    }
+    &.is-danger {
+        background-color: black;
+    }
+
+    .post-img {
+        border-radius: 1rem;
+    }
+
+}
+
+
+
+.footer {
+    color: white;
+    background-color: $background-dark-gray;
+    a{
+        font-weight: 500;
+
+        &:hover {
+            border-bottom: 1px solid;
+
+        }
+    }
+}

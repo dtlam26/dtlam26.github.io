@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+  <body>
+    <section class="hero is-dark is-fullheight ">
+        <div class="hero-head">
+            {% include header.html %}
+
+        </div>
+
+
+        <div class="hero-body ">
+            <div class="container has-text-centered">
+              <div class="columns is-vcentered">
+                    <div class="column is-6">
+                      <figure class="avatar image">
+                        <img class="is-rounded" src="/images/ava.jpeg" alt="">
+                      </figure>
+                      <h1 class="title is-1">
+                        {{ site.name }}
+                      </h1>
+                    </div>
+                    <div class="column" style="text-align: left;">
+                      <h4 class="title is-2">Skills</h4>
+                      <!-- skill is [key,value] -->
+                      {% for skill in site.skills %}
+                      <p class="subtitle"><strong>{{skill[1].title}}</strong>
+                        <progress class="progress is-normal is-info" value="{{skill[1].rate}}" max="100" >{{skill[1].rate}}%</progress>
+                      </p>
+                      {%endfor%}
+                    </div>
+              </div>
+              <div class="column is-full">
+                <p class="subtitle">
+                  {{ site.short_description }}
+                </p>
+
+              </div>
+            </div>
+        </div>
+        <div class="hero-footer">
+          <div class="container has-text-centered is-centered">
+            <div class="socials">
+              {% for i in site.contacts %}
+              {% if i.title != 'email' %}
+              <a href="{{i.url}}" target="_blank">
+                <i class="fa-brands fa-{{i.title}} fa-lg"></i>
+              </a>
+              {% endif %}
+              {%endfor%}
+
+              {% assign email = site.contacts | where:"title", "email"%}
+              {% for item in email %}
+              {% if item.title == "email" %}
+              <a href="{{ item.url }}" target="_blank">
+                <i class="fa-solid fa-envelope fa-lg"></i>
+              </a>
+              {% endif %}
+              {%endfor%}
+            </div>
+          </div>
+          <br>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+    <script src="/assets/js/wild.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        //The first argument are the elements to which the plugin shall be initialized
+        //The second argument has to be at least a empty object or a object with your desired options
+        OverlayScrollbars(document.querySelectorAll("body"), { });
+        });
+        </script>
+          {% include footer.html %}
+  </body>
+</html>

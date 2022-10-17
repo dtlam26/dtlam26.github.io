@@ -1,0 +1,120 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+error_image: NO IMAGE HAS BEEN UPLOADED
+image-background: 'https://picsum.photos/1024?random=6'
+collections:
+  backgrounds:
+    output: true
+  papers:
+    output: true
+  projects:
+    output: true
+
+skills:
+  coding_language:
+    title: Programming
+    details: Python,JavaScript,TypeScript,C/C++
+    rate: 80
+  dl_framework:
+    title: Machine Learning Framework
+    details: Tensorflow, Pytorch, Tensorrt
+    rate: 90
+  database:
+    title: Database Management
+    details: Redis, MongoDb, MySQL,Postgres, Neo4J
+    rate: 70
+  web:
+    title: Web Development
+    details: Django, Angular, Jekyll, Bulma, Bootstrap
+    rate: 55
+
+title: DTLam26
+name: DUONG TUNG LAM
+email: dtlam26@snu.ac.kr
+author:
+  name: Nativv Studios
+  about: Jekyll Theme
+
+short_description: >- # this means to ignore newlines until "baseurl:"
+  I am a Ms student in Electrical & Computer Engineering at the <a href="https://www.topuniversities.com/universities/seoul-national-university">Seoul National University (SNU), Korea</a>.
+  Currently, I focus on working with intelligent systems powered by computer vision under the supervision of Prof. Sang Kyun Cha in his
+  <a href="https://sites.google.com/snu.ac.kr/a2i2/">PIDLab</a>.
+  I received my BSc degree in Telecommunication (Advanced Program) from
+  <a href="https://en.wikipedia.org/wiki/Hanoi_University_of_Science_and_Technology">Hanoi University of Science and Technology (HUST), Vietnam</a> in 2019 and
+  started my first step in research as the former member of AICS Lab, leading by Dr. Vo Le Cuong.
+  My research interest includes IoT applications, Data management and Data life cycle within Computer Vision Applications.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+contacts:
+  - title: twitter
+    url: 'https://twitter.com/dtlam26'
+  - title: github
+    url:  'https://github.com/dtlam26'
+  - title: stack-overflow
+    url:  'https://stackoverflow.com/users/13726782/dtlam26'
+  # - title: facebook
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: instagram
+  #   url: 'https://example.com/@jekyllrb'
+  - title: linkedin
+    url: 'https://www.linkedin.com/in/lamduongtung'
+  # - title: youtube
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: twitch
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: telegram
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: whatsapp
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: discord
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: slack
+  #   url: 'https://example.com/@jekyllrb'
+  - title: email
+    url: mailto:dtlamw26@snu.ac.kr
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
