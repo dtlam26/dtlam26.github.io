@@ -25,13 +25,16 @@
                   {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
                   <p class="subtitle">{{ page.date | date: date_format }}</p>
                 </div>
+              </div>
+            </div>
+            <div class="container has-text-centered">
+              <div class="columns is-vcentered is-centered">
                 <div class="column is-four-fifths is-centered">
                   <div class="post-content">
                     {{content}}
                   </div>
                 </div>
               </div>
-            </div>
         </div>
     </section>
 
