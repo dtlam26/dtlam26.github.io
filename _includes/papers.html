@@ -1,12 +1,12 @@
 <section class="container is-full">
   <div class="columns is-multiline is-centered features">
-    <!-- {% assign sorted_papers = site.papers | sort: 'date' | reverse  %} -->
+    {% assign sorted_papers = site.papers | sort: 'date' | reverse  %}
     {% for paper in site.papers %}
     <div class="column is-full">
         <div class="card is-horizontal columns is-vcentered">
           <div class="card-image column is-three-fifths">
             {% if paper.video != "" %}
-            <iframe width="100%" height="60%"
+            <iframe width="100%"
               src="{{ paper.video }}">
             </iframe>
             {% else %}

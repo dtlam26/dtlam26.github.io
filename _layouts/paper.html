@@ -3,7 +3,6 @@
     {% include head.html %}
   <body>
     <section class="hero is-dark is-halfheight ">
-
         <div class="hero-head">
             {% include header.html %}
         </div>
@@ -14,7 +13,7 @@
                   <h1 class="title is-1">{{ page.title }}</h1>
                   <h4 class="title is-4"><a href="{{ page.conference_link }}">{{ page.conference }}</a></h4>
                   {% if page.video != "" %}
-                  <iframe width="100%" height="60%"
+                  <iframe width="100%"
                     src="{{ page.video }}">
                   </iframe>
                   {% else %}
@@ -23,7 +22,7 @@
                   </figure>
                   {% endif %}
                   {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
-                  <p class="subtitle">{{ page.date | date: date_format }}</p>
+                  <h5 class="title is-5">{{ page.date | date: date_format }}</h5>
                 </div>
               </div>
               <div class="column is-full is-centered">

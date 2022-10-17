@@ -24,8 +24,6 @@ video: ""
     <strong>Overview of SNU-SPS dataset</strong>
   </div>
 
-  <a class="button is-dark" href="mailto:dtlam26@snu.ac.kr"> Require Dataset Access </a>
-
   SNU-SPS dataset contains nearly 3500 images to support our system. Those images are captured from various views, heights (1-3m), and light conditions in indoor and outdoor parking lots. Each parking lot has different parking spot background colors. The total images were manually checked, labeled, and attached by GPS to the corresponding parking slot. The protocol used to construct the SNU-SPS dataset is composed as follows:
   <dl>
     <dt><strong><em>Image Acquisition:</em></strong></dt>
@@ -33,7 +31,7 @@ video: ""
     <dt><strong><em>Image Labeling:</em></strong></dt>
     <dd>For each parking sector, images were labeled as available/ occupied/ illegal/ restricted of each parking space. Each annotation is covered by four keypoints that specify for the localization of a parking lot. We formulate the wrapping bounding boxes for the detector from these key points. Especially, we provide optional image masks for the test set to filter out overlapping areas and non-important localization among capture among parking lots. The intention is to maintain the system’s constraints and preserve a better parking assignment benchmark.</dd>
   </dl>
-
+  <a class="button is-dark" href="mailto:dtlam26@snu.ac.kr"> Require Dataset Access </a>
   <div class="centered">
     <img src="/images/papers/ECCVW2022/parking_dataset_description.png">
     <strong>Details of SNU-SPS dataset</strong>
@@ -51,6 +49,7 @@ video: ""
 
   <div class="centered">
     <img src="/images/papers/ECCVW2022/modules.png">
+    <strong>Modules Architecture</strong>
   </div>
 
   Moreover, we attached two new modules for the *Spatial Estimator* and the *Training Error Estimator* as decribed in the abstract.
@@ -63,7 +62,7 @@ video: ""
           <img width="30%" src="/images/papers/ECCVW2022/error.png">
           <img width="60%" src="/images/papers/ECCVW2022/spatial.png">
           <figcaption>
-            Error training samples behavior (on the left) & Error determination/Spatial error (on the right)
+            <strong>Error training samples behavior (on the left) & Error determination/Spatial error (on the right)</strong>
           </figcaption>
         </figure>
       </div>

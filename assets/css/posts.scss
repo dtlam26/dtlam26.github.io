@@ -324,6 +324,9 @@ body {
   margin: 0 auto;
   color: var(--white-2);
   text-align: justify;
+  p {
+    margin-bottom: 1em;
+  }
 }
 
 footer {
