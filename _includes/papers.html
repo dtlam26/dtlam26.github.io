@@ -1,7 +1,7 @@
 <section class="container is-full">
   <div class="columns is-multiline is-centered features">
-    <!-- {% assign sorted_papers = site.papers | sort: 'date' | reverse  %} -->
-    {% for paper in site.papers %}
+    {% assign sorted_papers = site.papers | sort: 'date' | reverse  %}
+    {% for paper in sorted_papers %}
     <div class="column is-full">
         <div class="card is-horizontal columns is-vcentered">
           <div class="card-image column is-three-fifths">
@@ -19,9 +19,10 @@
             <div class="content">
               <h3 class="title is-3">{{ paper.title }}</h3>
               <a href="{{paper.conference_link}}">{{ paper.conference }}</a>
-              <div class="markdown">
+              <strong><em>Abstract:</em></strong><p>{{ paper.abstract }}</p>
+              <!-- <div class="markdown">
                 {{ paper.content }}
-              </div>
+              </div> -->
               <form action="{{ paper.url | relative_url }}">
                 <input class="button is-link modal-button" type="submit" value="Detail Content" />
               </form>
