@@ -1,0 +1,24 @@
+---
+layout: paper
+title:  "GreedySlide: An Efficient Sliding Window for Improving Edge-Object Detectors"
+date:  2021-05-25
+conference: RICE (Vietnamese Local conference)
+conference_link: https://riceconference.in
+categories: jekyll update
+image: "https://picsum.photos/1024?random=6"
+video: "https://www.youtube.com/embed/0O1N07DeSY8"
+---
+
+<strong><em>Abstract:</em></strong><p>The recent development in deep learning and edge hardware architecture has provided artificial applications with a robust foundation to move into real-life applications and allow a model to inference right on edge. If a well-trained edge object detection (OD) model is acquired, multiple scenarios such as autonomous driving, autonomous hospital management, or a self-shopping cart can be achieved. However, to make a model well-inference on edge, a model needs to be quantized to scale down the size and speed up at inference. This quantization scheme creates a degradation in the model where each layer is restricted to at most lower representations, forcing an output layer only to have fewer options to circle an object. Furthermore, it also limits model generalization where the behavior of the dataset gets cut off each activation layer. We proposed a novel method GreedySlide by sliding window that divides a capture into windows to make an object fits better on the quantization bound to address this problem. Even though the technique sounds simple, it helps increase the number of options for bounding an object and clips the variance that can have by scanning the whole image. Our work has improved an original edge model on its corresponding benchmark by experimenting and increasing the model generalization on other related datasets without retraining the model.</p>
+
+<div class="markdown_details" markdown="1">
+  <h3 class="title is-3">GreedySlide</h3>
+
+  GreedySlide allows to take advantage of any model inference performance and improve model generalization. To perform our GreedySlide Algorithm, we divide our work into three phases: Sliding Windows Detection, Bounding Boxes Suppression and Greedily Bounding Boxes Selection.
+
+  <div class=centered>
+    <img src="/images/papers/RICE2022/process.png">
+    <p><strong> Demonstation of the GreedySlid Algorithm </strong>: <em>Top picture is the result of bounding boxes by an original model; Middle picture is the ”partition” bounding boxes after Sliding Windows Detection of the same model; Bottom picture is the final bounding boxes after Bounding Boxes Suppression and Greedily Bounding Boxes Selection</em></p>
+  </div>
+
+</div>

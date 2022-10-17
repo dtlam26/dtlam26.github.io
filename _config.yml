@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-error_image: 'https://picsum.photos/1024?random=6'
+error_image: 'Unable to Load Image'
 collections:
   backgrounds:
     output: true
