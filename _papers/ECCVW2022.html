@@ -5,7 +5,7 @@ date:  2022-06-15
 conference: CVCIE (ECCV Workshop)
 conference_link: https://vap.aau.dk/cvcie/
 categories: jekyll update
-image: "/images/papers/ECCVW2022/system.png"
+image: ""
 video: ""
 ---
 
@@ -24,6 +24,8 @@ video: ""
     <strong>Overview of SNU-SPS dataset</strong>
   </div>
 
+  <a class="button is-dark" href="mailto:dtlam26@snu.ac.kr"> Require Dataset Access </a>
+
   SNU-SPS dataset contains nearly 3500 images to support our system. Those images are captured from various views, heights (1-3m), and light conditions in indoor and outdoor parking lots. Each parking lot has different parking spot background colors. The total images were manually checked, labeled, and attached by GPS to the corresponding parking slot. The protocol used to construct the SNU-SPS dataset is composed as follows:
   <dl>
     <dt><strong><em>Image Acquisition:</em></strong></dt>
@@ -37,11 +39,6 @@ video: ""
     <strong>Details of SNU-SPS dataset</strong>
   </div>
 
-  <div class="centered">
-    <div class="buttons">
-      <a class="button is-link is-dark" href="mailto:dtlam26@snu.ac.kr"> Require Dataset Access </a>
-    </div>
-  </div>
 
   <h3 class="title is-3"> OcpDet Detector</h3>
 
@@ -61,13 +58,15 @@ video: ""
     <dt><strong><em>Training Error Estimator:</em></strong></dt>
     <dd>For training error, we integrate the <a href="https://arxiv.org/abs/1905.03677">Learning Loss</a> approach to predict the error of the prediction/predict the loss that the image can cause. Based on this loss, we can replicate how much the loss will be for the output if we labeled and compute for an input. However, to make the Learning Loss behave better with the dataset statistic, we sample the predicted Learning Loss over the dataset as its mean and variance and compare inferenced samples by a distribution distance to these statistics.</dd>
     <dd>
-      <figure>
-        <img src="/images/papers/ECCVW2022/error.png">
-        <img src="/images/papers/ECCVW2022/spatial.png">
-      </figure>
-      <figcaption>
-        Error training samples behavior (on the left) & Error determination/Spatial error (on the right)
-      </figcaption>
+      <div class="centered">
+        <figure>
+          <img width="30%" src="/images/papers/ECCVW2022/error.png">
+          <img width="60%" src="/images/papers/ECCVW2022/spatial.png">
+          <figcaption>
+            Error training samples behavior (on the left) & Error determination/Spatial error (on the right)
+          </figcaption>
+        </figure>
+      </div>
     </dd>
     <dt><strong><em>Spatial Estimator:</em></strong></dt>
     <dd>As most of our nowadays detection focus on grid and anchor boxes, the prediction is filtered by a threshold value and background value. This can cause a situation where a correct activation anchor box has a score below this threshold, or a slight below the background confidence. Therefore, we provide an easy-integrated method by predicting the active anchor boxes in the scene by attaching another CNN module beside the *Training Error Estimator* and predict a mask of active anchors. This can be done reliably as the parking spots are equally patched in the scenes and can be well covered by different level of anchors. From this mask, we can suppress wrong detections by decreasing their confidence and enhance high-confidence anchors.</dd>
