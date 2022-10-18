@@ -1,0 +1,44 @@
+---
+layout: project
+title:  "Smart Driver Assistant"
+begin:  2020-03
+end:  2020-12
+categories: jekyll update
+image: "https://etimg.etb2bimg.com/photo/72487547.cms"
+demo: ""
+---
+
+<section class="content">
+  <strong><em>Belong:</em></strong> <a href="{{site.pidl}}">PIDLab</a>
+  <strong><em>Goal:</em></strong> The project aimed to support drivers with surrounding environments during their drive by a distributed intelligent edge device.
+  <strong><em>Features</em></strong>
+  <ul>
+    <li>Providing surround object distances and their relative velocity</li>
+    <li>Counting the number of vehicle during the drive and integrate with public traffic history for a personalized route recommender system</li>
+    <li>Secure information at the edge level</li>
+  </ul>
+</section>
+
+<div class="markdown_details" markdown="1">
+  <div class="block">
+    <h3 class="title is-3">Description</h3>
+    <p>Drivers, especially taxi drivers, will be handed an edge device controlling their vehicle surrounding cameras. The multi-cameras will capture the object in various views and angles and
+    formulate their information into traffic participants candidate. During the drive, objects such as pedestrians, cars, trucks,... will be recorded and stored at encrypted feature level on the edge.
+    from that capture, an distance estimation will be provided to alert drivers about surrounding vehicles velocity. Close contacted and high speed vehicle will be informed to avoid accidents from multiple views.
+    This helps enable better awareness for the driver.</p>
+    <p>After a day, the number of each category object from each drive will be uploaded to the cloud for a route recommender system</p>
+  </div>
+
+  <div class="block">
+    <h3 class="title is-3">Demonstration</h3>
+    <iframe src="https://www.youtube.com/embed/_1WAnWIiR1U" width="100%"></iframe>
+    <p>
+      This is a partial demonstation of our project. The demo is conducted in <a href="{{site.career.pidl}}">PIDLab</a> environment.
+      We estimate the distance from the size of close-contaced vehicles in corresponding with our own training dataset and count close and observable objects during the run.
+    </p>
+  </div>
+
+  <div class="block">
+    <strong>The edge used in this project is sponsored by Google and Nvidia</strong>
+  </div>
+</div>

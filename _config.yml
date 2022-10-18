@@ -18,8 +18,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-define: &pidl: "https://sites.google.com/snu.ac.kr/a2i2/"
-
 career:
   pidl: "https://sites.google.com/snu.ac.kr/a2i2/"
   snu: "https://www.topuniversities.com/universities/seoul-national-university"
