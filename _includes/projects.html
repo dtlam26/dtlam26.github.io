@@ -3,7 +3,7 @@
       <div class="column is-full">
         <h5 class="title is-5">Even though having conducted multiple projects, here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
       </div>
-      {% assign sorted_projects = site.projects | sort: 'begin'  %}
+      {% assign sorted_projects = site.projects | sort: 'begin' | reverse %}
       {% for project in sorted_projects %}
       <div class="column is-one-forth">
           <div class="card is-shady">
