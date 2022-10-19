@@ -1,5 +1,5 @@
 <section class="container">
-    <div class="columns is multiline is-centered features">
+    <div class="columns is-multiline is-centered features">
       {% assign sorted_backgrounds = site.backgrounds | sort: 'begin'  %}
       {% for background in sorted_backgrounds %}
       <div class="column is-half">
@@ -31,7 +31,6 @@
               <figure class="image is-2by1">
                 <img src="{{ background.image }}" alt="{{ site.error_image }}">
               </figure>
-              <button class="modal-close is-large" aria-label="close"></button>
             </div>
             <div class="card-content">
               <div class="content">
@@ -47,6 +46,7 @@
             </div>
           </div>
         </div>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
       {% endfor %}
     </div>
