@@ -1,9 +1,9 @@
 <section class="container">
-    <div class="block">
-      <h5 class="title is-5">Even though having conducted multiple projects, here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
-    </div>
     <div class="columns is multiline is-centered is-vcentered">
-      {% assign sorted_projects = site.projects | sort: 'date'  %}
+      <div class="column is-full">
+        <h5 class="title is-5">Even though having conducted multiple projects, here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
+      </div>
+      {% assign sorted_projects = site.projects | sort: 'begin'  %}
       {% for project in sorted_projects %}
       <div class="column is-one-forth">
           <div class="card is-shady">
@@ -18,21 +18,23 @@
                 <div class="markdown">{{ project.content}}</div>
                 {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
                 {% if project.end == "Present" %}
-                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end }}</h6>
+                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end }}</h6>
                 {% else %}
-                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end | {{ page.date | date: date_format }}</h6>
+                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end | {{ page.date | date: date_format }}</h6>
                 {% endif %}
               </div>
             </div>
           </div>
       </div>
       <div id="{{project.title}}" class="modal modal-fx-3dSignDown">
+        <div class="modal-background"></div>
         <div class="modal-content">
           <div class="card">
             <div class="card-image">
               <figure class="image is-2by1">
                 <img src="{{ project.image }}" alt="{{ site.error_image }}">
               </figure>
+              <button class="modal-close is-large" aria-label="close"></button>
             </div>
             <div class="card-content">
               <div class="content">
@@ -48,7 +50,7 @@
             </div>
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close"></button>
+
       </div>
       {% endfor %}
     </div>
