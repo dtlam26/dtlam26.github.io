@@ -23,11 +23,31 @@
                     <div class="column" style="text-align: left;">
                       <h4 class="title is-2">Skills</h4>
                       <!-- skill is [key,value] -->
-                      {% for skill in site.skills %}
-                      <p class="subtitle"><strong>{{skill[1].title}}</strong>
-                        <progress class="progress is-normal is-info" value="{{skill[1].rate}}" max="100" >{{skill[1].rate}}%</progress>
-                      </p>
-                      {%endfor%}
+                      <div class="tabs">
+                        <ul>
+                          <li class="is-active" data-target="bars"><a>Overview</a></li>
+                          <li data-target="details"><a>Details</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="tab-content"  id="tab-content">
+                        <div id="bars">
+                          {% for skill in site.skills %}
+                          <p class="subtitle"><strong>{{skill[1].title}}</strong>
+                            <progress class="progress is-normal is-info" value="{{skill[1].rate}}" max="100" >{{skill[1].rate}}%</progress>
+                          </p>
+                          {%endfor%}
+                        </div>
+
+                        <div id="details" class='is-hidden'>
+                          {% for skill in site.skills %}
+                          <p class="subtitle"><strong>{{skill[1].title}}</strong>
+                            {{skill[1].details}}
+                          </p>
+                          {%endfor%}
+                        </div>
+                      </div>
+
                     </div>
               </div>
               <div class="column is-full">
@@ -68,6 +88,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
     <script src="/assets/js/wild.js"></script>
+    <script src="/assets/js/reveal.js"></script>
         <script>
         document.addEventListener("DOMContentLoaded", function() {
         //The first argument are the elements to which the plugin shall be initialized
