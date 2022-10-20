@@ -12,19 +12,19 @@
                 <img src="{{ project.image }}" alt="No image">
               </figure>
             </div>
-            <div class="card-content modal-button" data-target="{{project.title}}">
+            <div class="card-content modal-button" data-target="{{project.title}}" style="height: 80%;overflow:clip">
               <div class="content">
-                <div class=".limit-title">
-                  <h3 class="title is-3">{{ project.title }}</h3>
-                </div>
+                <h3 class="title is-3">{{ project.title }}</h3>
                 <div class="markdown">{{ project.content}}</div>
-                {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
-                {% if project.end == "Present" %}
-                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end }}</h6>
-                {% else %}
-                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end | {{ page.date | date: date_format }}</h6>
-                {% endif %}
               </div>
+            </div>
+            <div class="card-footer">
+              {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+              {% if project.end == "Present" %}
+              <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end }}</h6>
+              {% else %}
+              <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end | {{ page.date | date: date_format }}</h6>
+              {% endif %}
             </div>
           </div>
       </div>
