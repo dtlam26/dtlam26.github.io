@@ -18,12 +18,14 @@
                   <h3 class="title is-3">{{ project.title }}</h3>
                 </div>
                 <div class="markdown">{{ project.content}}</div>
-                {%- assign date_format = site.bootstrap.date_format | default: "%-d, %Y" -%}
-                {% if project.end == "Present" %}
-                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end }}</h6>
-                {% else %}
-                <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end | {{ page.date | date: date_format }}</h6>
-                {% endif %}
+                <div class="footer">
+                  {%- assign date_format = site.bootstrap.date_format | default: "%b, %Y" -%}
+                  {% if project.end == "Present" %}
+                  <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end }}</h6>
+                  {% else %}
+                  <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end | {{ page.date | date: date_format }}</h6>
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
