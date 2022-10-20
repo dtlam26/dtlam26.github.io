@@ -21,36 +21,37 @@
                       </h1>
                     </div>
                     <div class="column" style="text-align: left;">
-                      <h4 class="title is-2">Skills</h4>
-                      <!-- skill is [key,value] -->
-                      <div class="tabs is-toggle">
-                        <ul>
-                          <li class="is-active" data-target="bars">
-                            <p class="subtitle"><strong>Overview</strong></p>
-                          </li>
-                          <li data-target="details">
-                            <p class="subtitle"><strong>Details</strong></p>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="tab-content"  id="tab-content">
-                        <div id="bars">
-                          {% for skill in site.skills %}
-                          <p class="subtitle"><strong>{{skill[1].title}}</strong>
-                            <progress class="progress is-normal is-info" value="{{skill[1].rate}}" max="100" >{{skill[1].rate}}%</progress>
-                          </p>
-                          {%endfor%}
+                      <div class="skill-container">
+                        <h4 class="title is-2">Skills</h4>
+                        <!-- skill is [key,value] -->
+                        <div class="tabs is-toggle">
+                          <ul>
+                            <li class="is-active" data-target="bars">
+                              <a><strong>Overview</strong></a>
+                            </li>
+                            <li data-target="details">
+                              <a class="subtitle"><strong>Details</strong></a>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="tab-content" id="tab-content">
+                          <div id="bars">
+                            {% for skill in site.skills %}
+                            <p class="subtitle"><strong>{{skill[1].title}}</strong>
+                              <progress class="progress is-normal is-info" value="{{skill[1].rate}}" max="100" >{{skill[1].rate}}%</progress>
+                            </p>
+                            {%endfor%}
+                          </div>
 
-                        <div id="details" class='is-hidden'>
-                          {% for skill in site.skills %}
-                          <p class="subtitle"><strong>{{skill[1].title}}</strong>
-                            {{skill[1].details}}
-                          </p>
-                          {%endfor%}
+                          <div id="details" class='is-hidden'>
+                            {% for skill in site.skills %}
+                            <p class="subtitle"><strong>{{skill[1].title}}</strong>
+                              <span style="color:#3e8ed0;">{{skill[1].details}}</span>
+                            </p>
+                            {%endfor%}
+                          </div>
                         </div>
                       </div>
-
                     </div>
               </div>
               <div class="column is-full">

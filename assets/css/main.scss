@@ -12,15 +12,15 @@ html {
   scrollbar-width: thin;
 }
 
-tabs{
+tabs.is-toggle {
   margin-bottom: 0;
 }
 
-.tabs.is-toggle li p{
+.tabs.is-toggle li a{
   background-color: a4741e !important;
   border-color: #c7a748 !important;
 }
-.tabs.is-toggle li.is-active p{
+.tabs.is-toggle li.is-active a{
   background-color: orange !important;
 }
 
