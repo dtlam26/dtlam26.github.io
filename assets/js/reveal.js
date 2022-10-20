@@ -1,5 +1,5 @@
 const tabs = document.querySelectorAll('.tabs li')
-const tabs_content = document.querySelectorAll('#tabs_content > div')
+const tabs_content = document.querySelectorAll('#tab-content > div')
 
 tabs.forEach((tab)=>{
   tab.addEventListener('click',() => {

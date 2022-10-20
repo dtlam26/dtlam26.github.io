@@ -23,13 +23,16 @@
                     <div class="column" style="text-align: left;">
                       <h4 class="title is-2">Skills</h4>
                       <!-- skill is [key,value] -->
-                      <div class="tabs">
+                      <div class="tabs is-toggle">
                         <ul>
-                          <li class="is-active" data-target="bars"><a>Overview</a></li>
-                          <li data-target="details"><a>Details</a></li>
+                          <li class="is-active" data-target="bars">
+                            <p class="subtitle"><strong>Overview</strong></p>
+                          </li>
+                          <li data-target="details">
+                            <p class="subtitle"><strong>Details</strong></p>
+                          </li>
                         </ul>
                       </div>
-
                       <div class="tab-content"  id="tab-content">
                         <div id="bars">
                           {% for skill in site.skills %}
