@@ -37,7 +37,9 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <h2 class="title is-2">{{ project.title }}</h2>
+                <div class=".limit-title">
+                  <h2 class="title is-2">{{ project.title }}</h2>
+                </div>
                 {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
                 {% if project.end == "Present" %}
                 <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end }}</h6>
