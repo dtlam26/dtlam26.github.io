@@ -50,16 +50,17 @@ body {
 }
 .card-image {
     object-fit: cover;
+    height: 20%;
+  	>.fa {
+  		font-size: 8rem;
+  		padding-top: 2rem;
+  		padding-bottom: 2rem;
+  		object-fit: cover;
+  		color: #209cee;
+  	}
 
-	>.fa {
-		font-size: 8rem;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-		object-fit: cover;
-		color: #209cee;
-	}
     img {
-        object-fit: cover;
+      object-fit: cover;
     }
 
     iframe {
@@ -109,13 +110,6 @@ body {
 
           * {
             line-height: 180%;
-            // a {
-            //   font-weight: bold;
-            //   color: orange;
-            // }
-            // a:hover {
-            //   font-weight: 900;
-            // }
           }
 
           p {
@@ -125,7 +119,12 @@ body {
             display: block;
             text-align: justify;
           }
-
+          .project-title{
+            height: 2em;
+            line-height: 1em !important;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
           .markdown {
             margin: 0 0 1.0rem 0;
             text-align: justify;
@@ -285,12 +284,12 @@ body {
 
 	}
 }
+
 .card {
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
   background-color: #282C34;
   max-width: 100%;
   margin-bottom: 1em;
-  height: 30%
 }
 .intro {
 	padding: 5rem 0;

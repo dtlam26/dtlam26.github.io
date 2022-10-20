@@ -1,20 +1,22 @@
 <section class="container">
-    <div class="columns is-multiline is-vcentered">
+    <div class="columns is-multiline">
       <div class="column is-full has-text-centered">
         <h5 class="title is-5">Even though having conducted multiple projects, here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
       </div>
       {% assign sorted_projects = site.projects | sort: 'begin' | reverse %}
       {% for project in sorted_projects %}
-      <div class="column is-one-forth">
+      <div class="column is-one-forth is-flex">
           <div class="card is-shady">
             <div class="card-image">
               <figure class="image is-2by1">
                 <img src="{{ project.image }}" alt="No image">
               </figure>
             </div>
-            <div class="card-content modal-button" data-target="{{project.title}}" style="height: 80%;overflow:clip">
+            <div class="card-content modal-button" data-target="{{project.title}}">
               <div class="content">
-                <h3 class="title is-3">{{ project.title }}</h3>
+                <div class="project-title">
+                  <h3 class="title is-3">{{ project.title }}</h3>
+                </div>
                 <div class="markdown">{{ project.content}}</div>
               </div>
             </div>
