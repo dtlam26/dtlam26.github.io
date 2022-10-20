@@ -36,7 +36,7 @@ collections:
 skills:
   coding_language:
     title: Programming
-    details: Python,JavaScript,TypeScript,C/C++
+    details: Python, JavaScript, TypeScript, C/C++
     rate: 80
   dl_framework:
     title: Machine Learning Framework
@@ -44,7 +44,7 @@ skills:
     rate: 90
   database:
     title: Database Management
-    details: Redis, MongoDb, MySQL,Postgres, Neo4J
+    details: Redis, MongoDb, MySQL, Postgres, Neo4J
     rate: 70
   web:
     title: Web Development
@@ -59,13 +59,13 @@ author:
   about: Jekyll Theme
 
 short_description: >- # this means to ignore newlines until "baseurl:"
-  'I am a Ms student in Electrical & Computer Engineering at the <a href='"${career.snu}"'>Seoul National University (SNU), Korea</a>.
+  I am a Ms student in Electrical & Computer Engineering at the <a href='"${career.snu}"'>Seoul National University (SNU), Korea</a>.
   Currently, I focus on working with intelligent systems powered by computer vision under the supervision of Prof. Sang Kyun Cha in his
   <a href='"career.pidl"'>PIDLab</a>.
   I received my BSc degree in Telecommunication (Advanced Program) from
   <a href='"career.hust"'>Hanoi University of Science and Technology (HUST), Vietnam</a> in 2019 and
   started my first step in research as the former member of AICS Lab, leading by Dr. Vo Le Cuong.
-  My research interest includes IoT applications, Data management and Data life cycle within Computer Vision Applications.'
+  My research interest includes IoT applications, Data management and Data life cycle within Computer Vision Applications.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
