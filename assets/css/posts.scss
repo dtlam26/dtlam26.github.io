@@ -135,7 +135,7 @@ body {
             -webkit-box-orient: vertical;
           }
 
-          .markdown p{
+          .markdown p .wrap_content{
             margin: 0;
             padding: 0;
             color: var(--white-2);
