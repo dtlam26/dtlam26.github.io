@@ -133,16 +133,12 @@ body {
             -webkit-line-clamp: 6;
             -webkit-box-orient: vertical;
             p {
-              margin: 0 !important
-              padding: 0;
-              color: var(--white-2);
-              display: block;
-              text-align: justify;
+              margin: 0 !important;
             }
           }
 
           .markdown .wrap_content{
-            margin: 0 !important
+            margin: 0 !important;
             padding: 0;
             color: var(--white-2);
             display: block;
