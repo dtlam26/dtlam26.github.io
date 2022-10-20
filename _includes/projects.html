@@ -1,7 +1,7 @@
 <section class="container">
     <div class="columns is-multiline">
       <div class="column is-full has-text-centered">
-        <h5 class="title is-5">Even though having conducted multiple projects, here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
+        <h5 class="title is-5">Here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
       </div>
       {% assign sorted_projects = site.projects | sort: 'begin' | reverse %}
       {% for project in sorted_projects %}
@@ -19,13 +19,11 @@
                 </div>
                 <div class="markdown">{{ project.content}}</div>
               </div>
-            </div>
-            <div class="card-footer">
               {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
               {% if project.end == "Present" %}
-              <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end }}</h6>
+              <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end }}</h6>
               {% else %}
-              <h6 class="subtitle">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end | {{ page.date | date: date_format }}</h6>
+              <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} ~ {{ project.end | {{ page.date | date: date_format }}</h6>
               {% endif %}
             </div>
           </div>
