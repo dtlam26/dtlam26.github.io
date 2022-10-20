@@ -144,6 +144,9 @@ body {
             display: block;
             text-align: justify;
             overflow: hidden;
+            p {
+              margin: 0 0 1.0rem 0;
+            }
           }
 
           .markdown .markdown_details{
