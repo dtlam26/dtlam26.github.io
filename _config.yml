@@ -40,7 +40,7 @@ skills:
     rate: 80
   dl_framework:
     title: Machine Learning Framework
-    details: Tensorflow, Pytorch, Tensorrt
+    details: Tensorflow, Pytorch, Tensorrt, SKLearn
     rate: 90
   database:
     title: Database Management
