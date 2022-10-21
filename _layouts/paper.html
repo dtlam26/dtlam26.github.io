@@ -22,7 +22,7 @@
                   </figure>
                   {% endif %}
                   {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
-                  <h5 class="title is-5">{{ page.date | date: date_format }}</h5>
+                  <h5 class="subtitle">{{ page.date | date: date_format }}</h5>
                 </div>
               </div>
               <div class="column is-full is-centered">

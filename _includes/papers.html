@@ -1,6 +1,6 @@
 <section class="container is-full">
   <div class="columns is-multiline is-centered">
-    {% assign sorted_papers = site.papers | sort: 'date'  %}
+    {% assign sorted_papers = site.papers | sort: 'date' | reverse %}
     {% for paper in sorted_papers %}
     <div class="column is-full">
         <div class="card is-horizontal columns is-vcentered">
