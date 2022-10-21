@@ -6,10 +6,24 @@ $navbar-font-color: white;
 $background-dark-gray: #23262a;
 $tiles-background: #2c3037;
 
-
-html {
+// #FireFox
+* {
   scrollbar-color: #6969dd #454553;
   scrollbar-width: thin;
+}
+// Works on Chrome, Edge, and Safari
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #454553;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #6969dd;
+  border-radius: 20px;
+  border: 3px solid #454553;
 }
 
 .skill-container{
