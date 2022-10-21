@@ -21,8 +21,8 @@
                       </h1>
                     </div>
                     <div class="column" style="text-align: left;">
+                      <h4 class="title is-2">Skills</h4>
                       <div class="skill-container">
-                        <h4 class="title is-2">Skills</h4>
                         <!-- skill is [key,value] -->
                         <div class="tabs is-toggle">
                           <ul>
@@ -42,13 +42,14 @@
                             </p>
                             {%endfor%}
                           </div>
-
                           <div id="details" class='is-hidden'>
-                            {% for skill in site.skills %}
-                            <p class="subtitle"><strong>{{skill[1].title}}:   </strong>
-                              <span style="color:#8ec9fb;">{{skill[1].details}}</span>
-                            </p>
-                            {%endfor%}
+                            <div class="background is-blue">
+                              {% for skill in site.skills %}
+                              <p class="subtitle"><strong>{{skill[1].title}}:   </strong>
+                                <span style="color:#8ec9fb;">{{skill[1].details}}</span>
+                              </p>
+                              {%endfor%}
+                            </div>
                           </div>
                         </div>
                       </div>

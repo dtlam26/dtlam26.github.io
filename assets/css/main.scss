@@ -35,6 +35,12 @@ $tiles-background: #2c3037;
     opacity: 30%;
     object-fit: cover;
   }
+  is-blue{
+    background: rgba(27,46,62,0.7);
+    width: max-content;
+    padding: 1em;
+    position: relative;
+  }
 }
 
 .skill-container{
