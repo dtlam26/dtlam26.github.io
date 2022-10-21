@@ -32,10 +32,10 @@ $tiles-background: #2c3037;
   width: 100%;
   height: 100%;
   img {
-    opacity: 30%;
+    opacity: 25%;
     object-fit: cover;
   }
-  is-blue{
+  .is-blue{
     background: rgba(27,46,62,0.7);
     width: max-content;
     padding: 1em;
