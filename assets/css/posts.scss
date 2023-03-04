@@ -76,6 +76,10 @@ iframe {
   text-align: center;
 }
 
+// avoid default inline-flex
+.icon-text{
+  display: inline
+}
 
 // align for images
 
