@@ -9,35 +9,35 @@
 
         </div>
 
-
+        {% assign date_format = site.bootstrap.date_format | default: "%b, %Y" %}
         <div class="hero-body">
             <div class="container has-text-centered is-centered">
                 <h1 class="title is-1">
                   {{ page.title | escape }}
                 </h1>
-                <p class="subtitle">
-                  {%- assign date_format = site.bootstrap.date_format | default: "%b, %Y" -%}
+                <div class="active-timeline">
+                  
                   {% if page.active == "true" %}
                   <strong class="subtitle is-6">{{ page.begin | {{ page.date | date: date_format }} - Present </strong>
                   {% else %}
                   <strong class="subtitle is-6">{{ page.begin | {{ page.date | date: date_format }} - {{ page.end | {{ page.date | date: date_format }}</strong>
                   {% endif %}
                   {% if page.active == "true" %}
-                  <div class="icon-text">
+                  <span  class="icon-text">
                     <span class="icon has-text-info">
                       <i class="fas fa-info-circle"></i>
                     </span>
                     <span>Active</span>
-                  </div>
+                  </span >
                   {% else %}
-                  <div class="icon-text">
+                  <span  class="icon-text">
                     <span class="icon has-text-success">
                       <i class="fas fa-check-square"></i>
                     </span>
                     <span>Finish</span>
-                  </div>
+                  </span >
                   {% endif %}
-                </p>
+                </div>
               </div>
         </div>
     </section>

@@ -3,6 +3,7 @@
       <div class="column is-full has-text-centered">
         <h5 class="title is-5">Here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
       </div>
+      {% assign date_format = site.bootstrap.date_format | default: "%b, %Y" %}
       {% assign sorted_projects = site.projects | sort: 'end' | reverse %}
       {% for project in sorted_projects %}
       <div class="column is-half is-flex">
@@ -19,26 +20,25 @@
                   <h3 class="title is-3">{{ project.title }}</h3>
                 </div>
                 <div class="active-timeline">
-                  {%- assign date_format = site.bootstrap.date_format | default: "%b, %Y" -%}
                   {% if project.active == "true" %}
                   <strong class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - Present </strong>
                   {% else %}
                   <strong class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end | {{ page.date | date: date_format }}</strong>
                   {% endif %}
                   {% if project.active == "true" %}
-                  <div class="icon-text">
+                  <span  class="icon-text">
                     <span class="icon has-text-info">
                       <i class="fas fa-info-circle"></i>
                     </span>
                     <span>Active</span>
-                  </div>
+                  </span >
                   {% else %}
-                  <div class="icon-text">
+                  <span  class="icon-text">
                     <span class="icon has-text-success">
                       <i class="fas fa-check-square"></i>
                     </span>
                     <span>Finish</span>
-                  </div>
+                  </span >
                   {% endif %}
                 </div>
                 <div class="markdown">{{ project.content}}</div>
