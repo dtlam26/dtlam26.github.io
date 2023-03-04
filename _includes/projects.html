@@ -59,12 +59,12 @@
               <div class="content">
                 <h2 class="title is-2">{{ project.title }}</h2>
                 <div class="active-timeline">
-                  {% if page.active == "true" %}
-                  <strong class="subtitle is-6">{{ page.begin | {{ page.date | date: date_format }} - Present </strong>
+                  {% if project.active == "true" %}
+                  <strong class="subtitle is-6">{{ project.begin | {{ project.date | date: date_format }} - Present </strong>
                   {% else %}
-                  <strong class="subtitle is-6">{{ page.begin | {{ page.date | date: date_format }} - {{ page.end | {{ page.date | date: date_format }}</strong>
+                  <strong class="subtitle is-6">{{ project.begin | {{ project.date | date: date_format }} - {{ project.end | {{ project.date | date: date_format }}</strong>
                   {% endif %}
-                  {% if page.active == "true" %}
+                  {% if project.active == "true" %}
                   <span  class="icon-text">
                     <span class="icon has-text-info">
                       <i class="fas fa-info-circle"></i>
@@ -80,6 +80,7 @@
                   </span >
                   {% endif %}
                 </div>
+                <p>{{ project.content}}</p>
               </div>
             </div>
           </div>
