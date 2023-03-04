@@ -1,7 +1,7 @@
 ---
 title:  Master-Graduate
 begin:  2020-03-15
-end:  Present
+end:  2023-02-24
 categories: jekyll update
 image: "../images/snu_gate.jpg"
 ---
