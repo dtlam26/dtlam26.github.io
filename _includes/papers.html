@@ -22,18 +22,18 @@
               <div class="markdown">
                 {{ paper.content }}
               </div>
-              <p class="buttons">
+              <div class="buttons are-normal">
                 <form action="{{ paper.url | relative_url }}">
-                  <input class="button is-link is-normal" type="submit" value="Detail Content" />
+                  <input class="button is-link" type="submit" value="Detail Content" />
                 </form>
-                {% if {{ paper.paper_link }} %}
+                {% if {{ paper.paper_link }} != "" %}
                 <form action="{{ paper.paper_link}}">
-                  <input class="button is-primary is-normal" type="submit" value="Publication Link" />
+                  <input class="button is-primary" type="submit" value="Publication Link" />
                 </form>
                 {% else %}
-                <input class="button is-primary is-normal disabled" value="Publication Link" />
+                <input class="button is-primary disabled" value="Publication Link" />
                 {% endif %}
-              </p>
+              </div>
               {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
               <h6 class="subtitle is-5">{{ paper.date | {{ page.date | date: date_format }}</h6>
             </div>
