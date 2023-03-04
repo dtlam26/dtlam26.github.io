@@ -1,0 +1,48 @@
+---
+layout: project
+title:  "Edge Management Framework for Data collection and Deployment in Smart City"
+begin:  2020-11-01
+end:  2021-2-01
+categories: jekyll update
+image: "https://i3.ytimg.com/vi/69E6kkPuPro/maxresdefault.jpg"
+demo: ""
+---
+
+<div class="wrap_content">
+  <p><a href="{{site.pidl}}">PIDLab</a> Project</p>
+  <p>
+    <strong><em>Goal:</em></strong>
+    The project aimed to provide a framework for serving a data life cycle scope through Nvidia Jetson and Google Models with two main functions: auto-aware of incorrect processed information, edge level cleansing data for model training, auto-match compression configuration and remote model inference customization.
+  </p>
+</div>
+
+<div class="markdown_details" markdown="1">
+  <div class="block">
+    <p>
+      <strong><em>Features</em></strong>
+      <ul>
+        <li>A website manages and versions models. Models can be then quantized for a specific configuration (ranging from 8bits to FP32) and provided perfromance awareness remotely </li>
+        <li>Edge models can launched, paused and stopped remotely through broker messages</li>
+        <li>An edge model can self-cleanse data and only send back valuable/questionable data for model training</li>
+        <li>Allow users to custom inference codes remotely on edge devices and provide a compact library in Python</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="block">
+    <h3 class="title is-3">Description</h3>
+    A post training model can be uploaded to the website for versioning. From the website, users can self write inference codes based on the corresponding library and deploy the model to the edges. Based on what edge configuration, the model will be quantized and attached data knowledge to avoid performance failure in the realworld environment. The model is then sent to edge and control remotely through the websocket. On the edge level, the model will provide task specific with a minimal delay in execution. During each inference, the edge model will continuously provide estimation on the errorness of data inference and collect high questionable results for labeling and avoiding data storage overhead.
+  </div>
+
+  <div class="block">
+    <h3 class="title is-3">Demonstration</h3>
+    <iframe src="https://youtube.com/embed/69E6kkPuPro" width="100%"></iframe>
+    <p>
+      This is the full pipeline of the framework for the Smart Parking Project
+    </p>
+  </div>
+
+  <div class="block">
+    <strong>The edge used in this project is sponsored by Google and Nvidia</strong>
+  </div>
+</div>

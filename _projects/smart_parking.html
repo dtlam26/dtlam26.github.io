@@ -1,0 +1,43 @@
+---
+layout: project
+title:  "Smart Parking Management"
+begin:  2022-01-01
+end:  2022-12-01
+categories: jekyll update
+image: "https://i3.ytimg.com/vi/-vuPTrw41MU/maxresdefault.jpg"
+demo: ""
+---
+
+<div class="wrap_content">
+  <p><a href="{{site.pidl}}">PIDLab</a> Project</p>
+  <p>
+    <strong><em>Goal:</em></strong>
+    The project aimed to reduce the effort of control and manage parking spots in multiple parking lots by using computer vision approaches. At the same time, the objective should also provide handy functions to the drivers to choose optimal parking places in term of environment and expense factors.
+  </p>
+</div>
+
+<div class="markdown_details" markdown="1">
+  <div class="block">
+    <p>
+      <strong><em>Features</em></strong>
+      <ul>
+        <li>A public website for users to query vacant spots in various parking space at once</li>
+        <li>A semi auto-assignment function to help users find their optimal spots</li>
+        <li>A real-time occupancy detection based on image captures</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="block">
+    <h3 class="title is-3">Description</h3>
+    Each edge will handle captures from multiple cameras and provide reliable occupancy detection with high precision quality. The occpancy information is concatenated for a specific parking rate in each parking lot and then stored in a shared database to avoid duplicate information. From the concrete measurements, each parking assignment request can be provided through a query.
+  </div>
+
+  <div class="block">
+    <h3 class="title is-3">Demonstration</h3>
+    <iframe src="https://youtube.com/embed/-vuPTrw41MU" width="100%"></iframe>
+    <p>
+      This is a partial demonstation of our project. The demo is conducted in Seoul National University campus. Further benchmark can be found in <a href="{{https://link.springer.com/chapter/10.1007/978-3-031-25082-8_11}}">our paper</a>
+    </p>
+  </div>
+</div>
