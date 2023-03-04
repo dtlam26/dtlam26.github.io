@@ -28,10 +28,10 @@
                 </form>
                 {% if paper.paper_link != "" %}
                 <form action="{{ paper.paper_link}}">
-                  <input class="button is-primary" type="submit" value="Publication Link" />
+                  <input class="button is-success" type="submit" value="Publication Link" />
                 </form>
                 {% else %}
-                <input class="button is-primary disabled" value="Publication Link" />
+                <button class="button disabled"> Publication Link </button>
                 {% endif %}
               </div>
               {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
