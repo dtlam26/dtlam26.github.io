@@ -16,7 +16,6 @@
                   {{ page.title | escape }}
                 </h1>
                 <div class="active-timeline">
-                  {{ page.active }}
                   {% if page.active == "true" %}
                   <strong class="subtitle is-6">{{ page.begin | {{ page.date | date: date_format }} - Present </strong>
                   {% else %}
