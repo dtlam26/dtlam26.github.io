@@ -12,7 +12,7 @@
                 <div class="column is-half">
                   <h1 class="title is-1">{{ page.title }}</h1>
                   <h4 class="title is-4"><a href="{{ page.conference_link }}">{{ page.conference }}</a></h4>
-                  <button class="title is-4"><a href="{{ page.paper_link }}">Publication Link</a></button>
+                  <a class="button is-link" href="{{ page.paper_link }}">Publication Link</a>
                   {% if page.video != "" %}
                   <iframe width="100%"
                     src="{{ page.video }}">
