@@ -26,7 +26,7 @@
                 <form action="{{ paper.url | relative_url }}">
                   <input class="button is-link" type="submit" value="Detail Content" />
                 </form>
-                {% if {{ paper.paper_link }} != "" %}
+                {% if paper.paper_link != "" %}
                 <form action="{{ paper.paper_link}}">
                   <input class="button is-primary" type="submit" value="Publication Link" />
                 </form>

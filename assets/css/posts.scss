@@ -81,6 +81,14 @@ body {
   text-align: center;
 }
 
+.modal-content,
+  .modal-card {
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    width: 940px;
+  }
+
+
   // content inside card
 
 .card-content {
