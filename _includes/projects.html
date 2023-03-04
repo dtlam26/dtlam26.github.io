@@ -3,9 +3,10 @@
       <div class="column is-full has-text-centered">
         <h5 class="title is-5">Here are some highlighted ones that I take charges most of the work in both researching and developing.</h5>
       </div>
-      {% assign sorted_projects = site.projects | sort: 'begin' | reverse %}
+      {% assign sorted_projects = site.projects | sort: 'end' | reverse %}
       {% for project in sorted_projects %}
-      <div class="column is-one-third is-flex">
+      <div class="column is-half is-flex">
+      <!-- <div class="column is-one-third is-flex"> -->
           <div class="card is-shady">
             <div class="card-image">
               <figure class="image is-2by1">
