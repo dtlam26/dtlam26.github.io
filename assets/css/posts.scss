@@ -36,7 +36,6 @@ body {
 	}
 	.subtitle {
 		color: hsl(192,17%,99%) !important;
-		padding-top: 2rem;
 		line-height: 1.75;
 	}
 }
@@ -69,7 +68,16 @@ body {
     }
 }
 
- // align for images
+// iframe size
+.iframe {
+  frameborder: 0;
+  width: 640;
+  height: 360;
+  text-align: center;
+}
+
+
+// align for images
 
 .centered {
   display: block;
