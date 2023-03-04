@@ -31,7 +31,7 @@
                   <input class="button is-success" type="submit" value="Publication Link" />
                 </form>
                 {% else %}
-                <button class="button disabled"> Publication Link </button>
+                <button class="button is-dark disabled"> Publication Link </button>
                 {% endif %}
               </div>
               {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}

@@ -18,28 +18,29 @@
                 <div class="project-title">
                   <h3 class="title is-3">{{ project.title }}</h3>
                 </div>
-                {% if project.active == "true" %}
-                <div class="icon-text">
-                  <span class="icon has-text-info">
-                    <i class="fas fa-info-circle"></i>
-                  </span>
-                  <span>Active</span>
+                <div class="active-timeline">
+                  {% if project.active == "true" %}
+                  <div class="icon-text">
+                    <span class="icon has-text-info">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Active</span>
+                  </div>
+                  {% else %}
+                  <div class="icon-text">
+                    <span class="icon has-text-success">
+                      <i class="fas fa-check-square"></i>
+                    </span>
+                    <span>Finish</span>
+                  </div>
+                  {% endif %}
+                  {%- assign date_format = site.bootstrap.date_format | default: "%b, %Y" -%}
+                  {% if project.active == "true" %}
+                  <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - Present </h6>
+                  {% else %}
+                  <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end | {{ page.date | date: date_format }}</h6>
+                  {% endif %}
                 </div>
-                {% else %}
-                <div class="icon-text">
-                  <span class="icon has-text-success">
-                    <i class="fas fa-check-square"></i>
-                  </span>
-                  <span>Finish</span>
-                </div>
-                {% endif %}
-          
-                {%- assign date_format = site.bootstrap.date_format | default: "%b, %Y" -%}
-                {% if project.active == "true" %}
-                <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - Present </h6>
-                {% else %}
-                <h6 class="subtitle is-6">{{ project.begin | {{ page.date | date: date_format }} - {{ project.end | {{ page.date | date: date_format }}</h6>
-                {% endif %}
                 <div class="markdown">{{ project.content}}</div>
               </div>
             </div>
