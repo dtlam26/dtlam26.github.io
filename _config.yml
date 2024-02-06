@@ -75,8 +75,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 contacts:
-  - title: twitter
-    url: 'https://twitter.com/dtlam26'
+  #- title: twitter
+  #  url: 'https://twitter.com/dtlam26'
   - title: github
     url:  'https://github.com/dtlam26'
   - title: stack-overflow
@@ -100,7 +100,7 @@ contacts:
   # - title: slack
   #   url: 'https://example.com/@jekyllrb'
   - title: email
-    url: mailto:dtlamw26@snu.ac.kr
+    url: mailto:dtlam26@snu.ac.kr
 
 # Build settings
 theme: minima
